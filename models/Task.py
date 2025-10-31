@@ -11,5 +11,4 @@ class Task(BaseModel):
 class EnterName(BaseModel):
     name:str = Field(...)
     email:str = Field(...)
-    is_student: Union[bool, None] = False
-    
+    # is_student: Union[bool, None] = False
