@@ -1,12 +1,11 @@
 from fastapi import APIRouter
+from models.Task import Task as TaskModel
 
-route = APIRouter(prefix="/api/v1")
+route = APIRouter(prefix="/api/v1", tags=["Task"])
 
-@route.get("/create")
-def createTask():
-    return{
-        "msg":"Task Created successfully"
-    }
+@route.post("/create")
+def createTask(data:TaskModel ):
+    return data
 
 @route.get("/seealltasks")
 def seeAllTasks():
