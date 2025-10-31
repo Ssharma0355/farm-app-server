@@ -1,8 +1,9 @@
 from fastapi import FastAPI
+from routes.Task import route as TaskRoute
 from fastapi.middleware.cors import CORSMiddleware
 
 
-app = FastAPI()
+app = FastAPI(title="Task Manager APIS - Sachin Sharma", version="0.0.1")
 
 # Optional: Allow frontend (React) access
 app.add_middleware(
@@ -12,6 +13,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(TaskRoute)
 
 @app.get("/")
 def initial():
