@@ -21,3 +21,9 @@ def initial():
     return{
         "message":"Hi sachin"
         }
+
+@app.get("/signlist")
+def getsignlist():
+    return{
+        "message":"List is here"
+    }
